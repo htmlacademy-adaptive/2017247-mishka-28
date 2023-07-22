@@ -1,1 +1,9 @@
-// Начните писать стили здесь
+// Базовые стили
+@use "./base/fonts.scss";
+@use "./base/base.scss";
+
+// Блоки компонентов
+@use "./blocks/page.scss";
+// @use "./blocks/container.scss";
+@use "./blocks/title.scss";
+// @use "./blocks/button.scss";
