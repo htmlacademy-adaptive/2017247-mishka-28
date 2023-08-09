@@ -1,0 +1,39 @@
+@use "./variables.scss";
+
+.logo {
+  display: block;
+  width: 86px;
+  transition: opacity 0.5s ease-out;
+
+  @media (min-width: variables.$tablet-width) {
+    width: 113px;
+
+    &:hover {
+      opacity: variables.$opacity-link-hover;
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active {
+    opacity: variables.$opacity-link-active;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    width: 149px;
+  }
+}
+
+.logo__image {
+  display: block;
+}

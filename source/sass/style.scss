@@ -4,6 +4,37 @@
 
 // Блоки компонентов
 @use "./blocks/page.scss";
-// @use "./blocks/container.scss";
+@use "./blocks/container.scss";
 @use "./blocks/title.scss";
-// @use "./blocks/button.scss";
+@use "./blocks/button.scss";
+
+// Header
+@use "./blocks/header/main-header.scss";
+@use "./blocks/header/logo.scss";
+@use "./blocks/header/main-navigation.scss";
+
+// Main
+@use "./blocks/main/main-content.scss";
+@use "./blocks/main/main-content-inner.scss";
+
+// Index
+@use "./blocks/main/index/promo-block.scss";
+@use "./blocks/main/index/featured-products.scss";
+@use "./blocks/main/index/advantages.scss";
+@use "./blocks/main/index/reviews.scss";
+@use "./blocks/main/index/slider.scss";
+@use "./blocks/main/index/contacts.scss";
+@use "./blocks/main/index/map.scss";
+
+// Form
+@use "./blocks/main/form/form-control.scss";
+
+// Footer
+@use "./blocks/footer/footer-contacts.scss";
+@use "./blocks/footer/socials-list.scss";
+@use "./blocks/footer/develop.scss";
+@use "./blocks/footer/footer-logo.scss";
+
+// Modal
+@use "./blocks/modal/modal-container.scss";
+@use "./blocks/modal/modal-content.scss";

@@ -1,0 +1,207 @@
+@use "./variables.scss";
+
+.promo-block {
+  background-image: url("../img/promo-background-mobile.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center top -17px;
+  background-color: #f9f9f9;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/promo-background-mobile@2x.jpg");
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    position: relative;
+    background-image: url("../img/promo-background-tablet.jpg");
+    background-position: center top;
+
+    &::before {
+      position: absolute;
+      z-index: 1;
+      bottom: -12px;
+      left: 0;
+      content: "";
+      width: 100%;
+      height: 24px;
+      background-image: url("../img/stack.svg#zigzag-fill-tablet");
+      background-repeat: repeat-x;
+      background-size: 768px 24px;
+      background-position: left bottom;
+    }
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/promo-background-tablet@2x.jpg");
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    &::before {
+      bottom: -17px;
+      left: 13px;
+      height: 34px;
+      background-image: url("../img/stack.svg#zigzag-fill-desktop");
+      background-size: 1250px 34px;
+    }
+  }
+}
+
+.promo-block__container {
+  margin-top: 1px;
+}
+
+.promo-block__text-wrapper {
+  padding: 72px 30px 30px 30px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 154px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-top: 157px;
+  }
+}
+
+.promo-block__title {
+  margin: 0;
+}
+
+.promo-block__link-wrapper {
+  margin-top: calc(100% - 229px);
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 0 30px;
+    margin-top: calc(100% - 386px);
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-top: calc(100% - 785px);
+  }
+}
+
+.promo-block__products-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.promo-block__products-link {
+  position: relative;
+  display: block;
+  padding: 24px 87px 31px 30px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.35s ease, background-color 0.35s ease;
+
+  &::before {
+    position: absolute;
+    content: "";
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: rgba(20, 144, 128, 0.5);
+    transition: background-color 0.35s ease;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 25px 94px 34px 36px;
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 124px;
+    margin-bottom: -5px;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    &:hover::before {
+      background-color: rgba(20, 144, 128, 0.69);
+    }
+  }
+
+  &:focus-visible {
+    z-index: 1;
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      z-index: 1;
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active::before {
+    background-color: rgba(20, 144, 128, 0.3);
+  }
+
+  &--interior {
+    background-color: #63d1bb;
+
+    &::before {
+      top: 23px;
+      right: 36px;
+      width: 40px;
+      height: 62px;
+      mask-image: url("../img/stack.svg#interior");
+      mask-size: 40px 62px;
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      &::before {
+        top: 30px;
+      }
+
+      &:hover {
+        background-color: #59d5bc;
+      }
+    }
+
+    &:active {
+      background-color: #59d5bc;
+    }
+  }
+
+  &--toys {
+    background-color: #56c3b2;
+
+    &::before {
+      top: 21px;
+      right: 27px;
+      width: 60px;
+      height: 60px;
+      mask-image: url("../img/stack.svg#toy");
+      mask-size: 60px 60px;
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      &::before {
+        top: 31px;
+        right: 33px;
+      }
+
+      &:hover {
+        background-color: #46c1ae;
+      }
+    }
+
+    &:active {
+      background-color: #46c1ae;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      &::before {
+        right: 35px;
+      }
+    }
+  }
+}

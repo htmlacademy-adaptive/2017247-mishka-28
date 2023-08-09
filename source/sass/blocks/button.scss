@@ -1,0 +1,69 @@
+@use "./variables.scss";
+
+.button {
+  display: inline-block;
+  padding: 14px;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #444444;
+  background-color: #ffffff;
+  border: 2px solid #444444;
+  appearance: none;
+  transition: background-color 0.5s ease-out, color 0.5s;
+  cursor: pointer;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 17px;
+
+    &:hover {
+      color: variables.$btn-color-hover;
+      background-color: variables.$btn-bg-hover;
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active {
+    color: variables.$btn-color-active;
+    background-color: variables.$btn-bg-hover;
+  }
+
+  &:disabled {
+    opacity: variables.$btn-opacity-disabled;
+    pointer-events: none;
+  }
+
+  &--green {
+    padding: 16px;
+    font-size: 17px;
+    line-height: 16px;
+    color: #ffffff;
+    background-color: #63d1bb;
+    border-color: transparent;
+
+    @media (min-width: variables.$tablet-width) {
+      &:hover {
+        background-color: variables.$btn-green-bg-hover;
+      }
+    }
+
+    &:active {
+      color: variables.$btn-green-color-active;
+      background-color: variables.$btn-green-bg-hover;
+    }
+  }
+}

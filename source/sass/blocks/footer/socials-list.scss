@@ -1,0 +1,84 @@
+@use "./variables.scss";
+
+.socials-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 29px;
+  padding: 0;
+  list-style-type: none;
+}
+
+.socials-list__item,
+.socials-list__link {
+  position: relative;
+  min-width: 28px;
+  min-height: 23px;
+}
+
+.socials-list__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.socials-list__link {
+  text-decoration: none;
+
+  &::before {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    content: "";
+    width: 28px;
+    height: 23px;
+    mask-repeat: no-repeat;
+    mask-size: 28px 23px;
+    mask-position: center;
+    background-color: #231f20;
+    transition: background-color 0.5s ease-out, opacity 0.5s;
+  }
+
+  &--vkontakte {
+    &::before {
+      mask-image: url("../img/stack.svg#vkontakte");
+    }
+  }
+
+  &--youtube {
+    &::before {
+      mask-image: url("../img/stack.svg#youtube");
+    }
+  }
+
+  &--telegram {
+    &::before {
+      mask-image: url("../img/stack.svg#telegram");
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    &:hover::before {
+      background-color: variables.$color-link-hover;
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active::before {
+    background-color: variables.$color-link-hover;
+    opacity: variables.$opacity-link-active;
+  }
+}
