@@ -56,6 +56,18 @@
   }
 }
 
+.form-control--radio-accessory .form-control__text {
+  padding: 3px 3px 3px 61px;
+
+  @media (min-width: 350px) {
+    padding: 12px 12px 12px 61px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 17px 17px 17px 78px;
+  }
+}
+
 .form-control--modal .form-control__text {
   z-index: 1;
   width: 100%;

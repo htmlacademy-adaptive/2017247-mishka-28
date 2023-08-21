@@ -109,13 +109,14 @@
 .featured-products__info-wrapper {
   @media (min-width: variables.$tablet-width) {
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr 334px;
     column-gap: 42px;
     grid-column: 1/4;
     grid-row: 2/3;
   }
 
   @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 1fr 525px;
     column-gap: 58px;
     margin-left: 175px;
     margin-top: -91px;
@@ -195,20 +196,26 @@
   @media (min-width: variables.$tablet-width) {
     grid-column: 2/3;
     grid-row: 1/5;
-    align-self: end;
     margin-bottom: 0;
+    margin-top: 12px;
   }
 
   @media (min-width: variables.$desktop-width) {
     grid-row: 1/6;
+    margin-top: 0;
   }
+}
+
+picture {
+  display: block;
+  height: 100%;
 }
 
 .featured-products__image {
   display: block;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  min-height: 100%;
+  object-fit: cover;
 }
 
 .featured-products__price {

@@ -176,18 +176,6 @@
   }
 }
 
-.order__form-group--type .order__form-control-item:nth-child(1) .order__form-control-label span {
-  padding: 3px 3px 3px 61px;
-
-  @media (min-width: 350px) {
-    padding: 12px 12px 12px 61px;
-  }
-
-  @media (min-width: variables.$tablet-width) {
-    padding: 17px 17px 17px 78px;
-  }
-}
-
 .order__form-group--type .order__form-control-item:nth-child(2) {
   @media (min-width: variables.$desktop-width) {
     grid-column: 1/2;

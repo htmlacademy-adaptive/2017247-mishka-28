@@ -38,9 +38,10 @@
   @media (min-width: variables.$desktop-width) {
     &::before {
       bottom: -17px;
+      left: 11px;
       height: 34px;
       background-image: url("../img/stack.svg#zigzag-fill-desktop");
-      background-size: 1150px 34px;
+      background-size: 1250px 34px;
     }
   }
 }
@@ -94,6 +95,7 @@
   position: relative;
   display: block;
   padding: 24px 87px 31px 30px;
+  height: 100%;
   font-size: 19px;
   font-weight: 700;
   line-height: 24px;
