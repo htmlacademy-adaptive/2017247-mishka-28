@@ -1,0 +1,198 @@
+@use "./variables.scss";
+
+.product-card {
+  display: grid;
+  transition: box-shadow 0.3s linear;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-template-columns: 50% 50%;
+
+    &:hover {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.product-card__link {
+  text-decoration: none;
+  color: #000000;
+  transition: opacity 0.5s;
+
+  &--info {
+    @media (min-width: variables.$tablet-width) {
+      &:hover {
+        opacity: variables.$opacity-link-hover;
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active {
+    opacity: variables.$opacity-link-active;
+  }
+
+  &--add-to-basket {
+    position: relative;
+    min-width: 40px;
+    min-height: 24px;
+    justify-self: end;
+    transform: translateX(10px);
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      right: 10px;
+      min-width: 20px;
+      min-height: 19px;
+      mask-image: url("../img/stack.svg#basket");
+      mask-repeat: no-repeat;
+      mask-size: 20px 19px;
+      mask-position: center;
+      background-color: rgba(0, 0, 0, 0.2);
+      transition: background-color 0.5s;
+    }
+
+    @media (min-width: variables.$tablet-width) {
+      &:hover::before {
+        background-color: variables.$header-color-link-hover;
+      }
+    }
+
+    &:active::before {
+      background-color: variables.$header-color-link-hover;
+    }
+  }
+}
+
+.product-card__image-wrapper {
+  height: 100%;
+}
+
+.product-card__picture {
+  height: 100%;
+}
+
+.product-card__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card__description-wrapper {
+  display: grid;
+  border: 1px solid #ececec;
+
+  @media (min-width: variables.$tablet-width) {
+    align-content: space-between;
+    row-gap: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    row-gap: 6px;
+    flex-grow: 1;
+  }
+}
+
+.product-card__text-wrapper {
+  padding: 27px 28px 17px 28px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 26px 33px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 26px 27px 6.5px 27px;
+  }
+}
+
+.product-card__title {
+  margin: 0;
+  margin-bottom: 6px;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: left;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 20px;
+  }
+}
+
+.product-card__description {
+  margin: 0;
+  font-size: 13px;
+  color: #444444;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 15px;
+  }
+}
+
+.product-card__price-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  padding: 22.5px 27px 26.5px 27px;
+
+  &::before {
+    position: absolute;
+    bottom: 100%;
+    left: 28px;
+    content: "";
+    width: calc(100% - 56px);
+    height: 1px;
+    background-color: #ececec;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 23.5px 33px 24.5px 33px;
+
+    &::before {
+      width: calc(100% - 66px);
+      left: 33px;
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 24px 30px 24.5px 27px;
+
+    &::before {
+      width: calc(100% - 60px);
+      left: 28px;
+    }
+  }
+}
+
+.product-card__price {
+  margin: 0;
+  margin-right: 20px;
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 700;
+  color: #000000;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 17px;
+  }
+}

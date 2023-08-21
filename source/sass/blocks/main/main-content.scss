@@ -1,0 +1,17 @@
+@use "./variables.scss";
+
+.main-content {
+  flex: 1 1 auto;
+}
+
+.main-content__promo {
+  @media (min-width: variables.$tablet-width) {
+    transform: translateY(-66px);
+    margin-bottom: -66px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    transform: translateY(-62px);
+    margin-bottom: -62px;
+  }
+}

@@ -1,0 +1,11 @@
+@use "./variables.scss";
+
+.container {
+  width: 100%;
+  max-width: 1110px;
+  margin: 0 auto;
+
+  @media (min-width: variables.$tablet-width) {
+    width: calc(100% - 40px);
+  }
+}

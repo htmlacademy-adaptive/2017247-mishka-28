@@ -1,1 +1,49 @@
-// Начните писать стили здесь
+// Базовые стили
+@use "./base/fonts.scss";
+@use "./base/base.scss";
+
+// Блоки компонентов
+@use "./blocks/page.scss";
+@use "./blocks/container.scss";
+@use "./blocks/title.scss";
+@use "./blocks/button.scss";
+
+// Header
+@use "./blocks/header/main-header.scss";
+@use "./blocks/header/logo.scss";
+@use "./blocks/header/main-navigation.scss";
+
+// Main
+@use "./blocks/main/main-content.scss";
+@use "./blocks/main/main-content-inner.scss";
+
+// Index
+@use "./blocks/main/index/promo-block.scss";
+@use "./blocks/main/index/featured-products.scss";
+@use "./blocks/main/index/advantages.scss";
+@use "./blocks/main/index/reviews.scss";
+@use "./blocks/main/index/slider.scss";
+@use "./blocks/main/index/contacts.scss";
+@use "./blocks/main/index/map.scss";
+
+// Catalog
+@use "./blocks/main/catalog/catalog-products.scss";
+@use "./blocks/main/catalog/product-card.scss";
+@use "./blocks/main/catalog/production-process.scss";
+@use "./blocks/main/catalog/video.scss";
+
+// Form
+@use "./blocks/main/form/order.scss";
+@use "./blocks/main/form/form-control.scss";
+@use "./blocks/main/form/form-field.scss";
+@use "./blocks/main/form/input.scss";
+
+// Footer
+@use "./blocks/footer/footer-contacts.scss";
+@use "./blocks/footer/socials-list.scss";
+@use "./blocks/footer/develop.scss";
+@use "./blocks/footer/footer-logo.scss";
+
+// Modal
+@use "./blocks/modal/modal-container.scss";
+@use "./blocks/modal/modal-content.scss";

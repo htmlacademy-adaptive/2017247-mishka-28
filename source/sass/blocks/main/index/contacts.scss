@@ -1,0 +1,181 @@
+@use "./variables.scss";
+
+.contacts {
+  padding: 44px 30px 39px 30px;
+
+  @media (min-width: variables.$tablet-width) {
+    position: relative;
+    display: grid;
+    padding-top: 85px;
+    padding-bottom: 57px;
+
+    &::before {
+      position: absolute;
+      min-width: 47px;
+      min-height: 81px;
+      content: "";
+      right: 33px;
+      top: 63px;
+      background-image: url("../img/stack.svg#flag");
+      background-repeat: no-repeat;
+      background-size: 47px 81px;
+      background-position: center;
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 1fr 527px;
+    column-gap: 23px;
+    padding-top: 94px;
+    padding-bottom: 105px;
+
+    &::before {
+      left: 93px;
+      right: auto;
+      top: 156px;
+    }
+  }
+}
+
+.contacts__title {
+  margin: 0;
+  margin-bottom: 28px;
+  font-size: 25px;
+  text-align: left;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 49px;
+    font-size: 43px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin: 77px 0 34.5px 174px;
+    font-size: 53px;
+  }
+}
+
+.contacts__address {
+  margin-bottom: 62px;
+  font-size: 14px;
+  font-style: normal;
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 49px;
+    font-size: 17px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-template-columns: 1fr;
+    margin-left: 174px;
+    margin-bottom: 84px;
+  }
+}
+
+.contacts__address-email,
+.contacts__address-street {
+  display: grid;
+  grid-template-columns: 30% 1fr;
+  margin: 0;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.contacts__address-email {
+  margin-bottom: 29px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-bottom: 0;
+    margin-right: 20px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 29px;
+  }
+}
+
+.contacts__address-text {
+  margin-right: 20px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-right: 25px;
+  }
+}
+
+.contacts__address-email-link {
+  justify-self: start;
+  color: #444444;
+  text-decoration-color: #62d1ba;
+  text-decoration-thickness: 1px;
+  text-underline-position: under;
+  transition: color 0.4s ease-out;
+
+  @media (min-width: variables.$tablet-width) {
+    align-self: start;
+    text-underline-offset: 3px;
+
+    &:hover {
+      color: variables.$color-link-hover;
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: 8px;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: 8px;
+    }
+  }
+
+  &:active {
+    color: variables.$color-link-hover;
+    text-decoration-color: rgba(98, 209, 187, 0.1);
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    text-underline-offset: 7px;
+  }
+}
+
+.contacts__map-wrapper {
+  min-width: calc(100% + 60px);
+  margin-left: -30px;
+  margin-bottom: 42px;
+
+  @media (min-width: variables.$tablet-width) {
+    min-width: calc(100% + 100px);
+    margin-left: -50px;
+    margin-bottom: 55px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    min-width: 100%;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.contacts__feedback-link {
+  min-width: 100%;
+  text-decoration: none;
+
+  @media (min-width: variables.$tablet-width) {
+    min-width: 230px;
+    justify-self: center;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-left: 174px;
+    justify-self: start;
+    align-self: end;
+  }
+}

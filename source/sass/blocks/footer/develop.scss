@@ -1,0 +1,53 @@
+@use "./variables.scss";
+
+.develop {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  font-size: 19px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #000000;
+
+  @media (min-width: variables.$tablet-width) {
+    &:hover .develop__icon-logo-htmlacademy {
+      color: variables.$color-link-hover;
+    }
+  }
+
+  &:focus-visible {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+
+  @supports not selector(:focus-visible) {
+    &:focus {
+      outline: variables.$outline-focus;
+      outline-offset: variables.$outline-offset-focus;
+    }
+  }
+
+  &:active .develop__icon-logo-htmlacademy {
+    color: variables.$color-link-hover;
+    opacity: variables.$opacity-link-active;
+  }
+}
+
+.develop__text {
+  margin-right: 27px;
+
+  @media (min-width: variables.$tablet-width) {
+    margin-right: 25px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-right: 27px;
+  }
+}
+
+.develop__icon-logo-htmlacademy {
+  flex-shrink: 0;
+  color: #63d1bb;
+  transition: color 0.5s ease-out, opacity 0.5s;
+}

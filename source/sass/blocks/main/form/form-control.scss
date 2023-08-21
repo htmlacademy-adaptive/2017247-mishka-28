@@ -1,0 +1,184 @@
+@use "./variables.scss";
+
+.form-control {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.form-control__text {
+  position: relative;
+  padding: 10px 10px 10px 61px;
+  font-size: 17px;
+  line-height: 18px;
+  font-weight: 700;
+  color: #000000;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    content: "";
+    width: 38px;
+    height: 38px;
+    border: 2px solid #444444;
+    transition: border-color 0.3s;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 17px 17px 17px 82px;
+    font-size: 19px;
+
+    &::before {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.form-control--radio .form-control__text {
+  padding: 12px 12px 12px 61px;
+
+  &::before {
+    width: 42px;
+    height: 42px;
+    border-radius: 30px;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 17px 17px 17px 78px;
+
+    &::before {
+      width: 52px;
+      height: 52px;
+    }
+  }
+}
+
+.form-control--modal .form-control__text {
+  z-index: 1;
+  width: 100%;
+  padding: 18px;
+  font-family: inherit;
+  font-weight: 700;
+  line-height: 16px;
+  color: #444444;
+  text-align: center;
+
+  &::before {
+    z-index: -1;
+    width: 100%;
+    min-width: 82px;
+    height: 52px;
+    background-color: #ffffff;
+    border: 2px solid #444444;
+    opacity: 0.1;
+    transition: border-color 0.3s, opacity 0.3s;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 17px;
+
+    &::before {
+      min-width: 112px;
+    }
+  }
+}
+
+.form-control__input[type="checkbox"]:checked + .form-control__text::after {
+  position: absolute;
+  top: 50%;
+  left: 7px;
+  transform: translateY(-50%);
+  content: "";
+  width: 24px;
+  height: 17px;
+  background-image: url("../img/stack.svg#tick");
+  background-repeat: no-repeat;
+  background-size: 24px 17px;
+  background-position: center;
+
+  @media (min-width: variables.$tablet-width) {
+    width: 32px;
+    height: 22px;
+    left: 11px;
+    background-size: 32px 22px;
+  }
+}
+
+.form-control__input[type="radio"]:checked + .form-control__text::after {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: #62d1ba;
+  border-radius: 50%;
+
+  @media (min-width: variables.$tablet-width) {
+    width: 23px;
+    height: 23px;
+    left: 15px;
+  }
+}
+
+.form-control--modal .form-control__input[type="radio"]:checked + .form-control__text::after {
+  content: none;
+}
+
+.form-control--modal .form-control__input[type="radio"]:checked + .form-control__text::before {
+  border-color: #63d1bb;
+  opacity: 1;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .form-control:hover .form-control__text::before {
+    border-color: variables.$input-control-border-color-hover;
+  }
+
+  .form-control--modal:hover .form-control__text::before {
+    opacity: 0.3;
+  }
+}
+
+.form-control__input:focus-visible + .form-control__text::before {
+  outline: variables.$outline-focus;
+  outline-offset: variables.$outline-offset-focus;
+}
+
+@supports not selector(:focus-visible) {
+  .form-control__input:focus + .form-control__text::before {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+}
+
+.form-control--modal .form-control__input:focus-visible + .form-control__text::before {
+  outline: variables.$outline-focus;
+  outline-offset: variables.$outline-offset-focus;
+}
+
+@supports not selector(:focus-visible) {
+  .form-control--modal .form-control__input:focus + .form-control__text::before {
+    outline: variables.$outline-focus;
+    outline-offset: variables.$outline-offset-focus;
+  }
+}
+
+.form-control:active .form-control__text::before {
+  border-color: variables.$input-control-border-color-active;
+}
+
+.form-control--modal:active .form-control__text::before {
+  border-color: variables.$input-control-modal-border-color-active;
+  opacity: 1;
+}
+
+// Неактивное состояние
+.form-control.disabled {
+  opacity: variables.$input-label-opacity-disabled;
+  pointer-events: none;
+}

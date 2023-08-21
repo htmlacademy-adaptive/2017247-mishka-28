@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Каталог товаров</title>
+  <link rel="icon" href="favicon.ico">
+  <link rel="icon" href="img/favicons/favicon-32x32.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="img/favicons/favicon-180x180.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="preload" href="fonts/opensans.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+  <link rel="preload" href="fonts/opensansbold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
+</head>
+
+<body class="page__body">
+
+  <!--ШАПКА СТРАНИЦЫ КАТАЛОГА-->
+  <header class="page__header main-header">
+
+    <div class="main-header__container container">
+      <!--Логотип сайта-->
+      <a class="main-header__logo-link logo" href="index.html">
+        <picture>
+          <source media="(min-width: 1150px)" srcset="img/svg/logo/logo-desktop.svg" width="149" height="72">
+          <source media="(min-width: 768px)" srcset="img/svg/logo/logo-tablet.svg" width="113" height="46">
+          <img class="logo__image" src="img/svg/logo/logo-mobile.svg" width="86" height="35"
+            alt="Логотип интернет-магазина товаров ручной работы для дома «Мишка».">
+        </picture>
+      </a>
+
+      <!--Навигация-->
+      <!-- Для открытия меню добавить класс main-navigation--opened, а для закрытия класс main-navigation--closed -->
+      <nav class="main-header__navigation main-navigation main-navigation--nojs">
+        <button class="main-navigation__toggle" type="button">
+          <span class="visually-hidden">Открыть меню/закрыть меню.</span>
+        </button>
+        <div class="main-navigation__wrapper">
+          <ul class="main-navigation__list">
+            <li class="main-navigation__item">
+              <a class="main-navigation__link main-navigation__link--current" href="catalog.html"
+                aria-current="page">Каталог товаров</a>
+            </li>
+            <li class="main-navigation__item">
+              <a class="main-navigation__link" href="form.html">Вязание на заказ</a>
+            </li>
+          </ul>
+          <ul class="main-navigation__user-list">
+            <li class="main-navigation__user-item main-navigation__user-item--search">
+              <a class="main-navigation__user-link main-navigation__user-link--search" href="#">
+                <span class="main-navigation__user-link-text">Поиск по сайту</span>
+              </a>
+            </li>
+            <li class="main-navigation__user-item">
+              <a class="main-navigation__user-link main-navigation__user-link--basket" href="#">
+                <span class="main-navigation__user-link-text">Корзина:</span>
+                <span class="main-navigation__user-link-quantity-value">пока пуста</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="main-navigation__info-list">
+            <li class="main-navigation__info-item">
+              <!-- Если страница текущая, то добавить ссылке класс main-navigation__info-link--current и aria-current="page" -->
+              <a class="main-navigation__info-link" href="#">Новые поступления</a>
+            </li>
+            <li class="main-navigation__info-item">
+              <a class="main-navigation__info-link" href="#">Распродажа</a>
+            </li>
+          </ul>
+          <p class="main-navigation__delivery-info">Бесплатная доставка по России</p>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!--ОСНОВНОЕ СОДЕРЖАНИЕ СТРАНИЦЫ КАТАЛОГА-->
+  <main class="main-content-inner">
+    <div class="main-content-inner__title-wrapper">
+      <div class="main-content-inner__container container">
+        <h1 class="main-content-inner__title title">Каталог товаров</h1>
+      </div>
+    </div>
+
+    <!--КАРТОЧКИ ТОВАРА-->
+    <section class="catalog-products container">
+      <h2 class="visually-hidden">Список товаров.</h2>
+      <ul class="catalog-products__list">
+        <li class="catalog-products__item product-card">
+          <a class="product-card__link product-card__link--info" href="#">
+            <div class="product-card__image-wrapper">
+              <picture class="product-card__picture">
+                <source type="image/webp" media="(min-width: 1150px)"
+                  srcset="img/catalog/bunny-desktop.webp 1x, img/catalog/bunny-desktop@2x.webp 2x" width="316"
+                  height="462">
+                <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/catalog/bunny-tablet.webp 1x, img/catalog/bunny-tablet@2x.webp 2x" width="334"
+                  height="334">
+                <source type="image/webp" srcset="img/catalog/bunny-mobile.webp 1x, img/catalog/bunny-mobile@2x.webp 2x"
+                  width="260" height="195">
+                <source media="(min-width: 1150px)"
+                  srcset="img/catalog/bunny-desktop.jpg 1x, img/catalog/bunny-desktop@2x.jpg 2x" width="316"
+                  height="462">
+                <source media="(min-width: 768px)"
+                  srcset="img/catalog/bunny-tablet.jpg 1x, img/catalog/bunny-tablet@2x.jpg 2x" width="334" height="334">
+                <img class="product-card__image" src="img/catalog/bunny-mobile.jpg"
+                  srcset="img/catalog/bunny-mobile@2x.jpg 2x" width="260" height="195"
+                  alt="Вязаный белый зайчик-попрыгайчик в голубом костюме, стоящий перед большим пластиковым мороженым.">
+              </picture>
+            </div>
+          </a>
+          <div class="product-card__description-wrapper">
+            <div class="product-card__text-wrapper">
+              <a class="product-card__link product-card__link--info" href="#">
+                <h3 class="product-card__title title">Зайчик-попрыгайчик</h3>
+              </a>
+              <p class="product-card__description">Рост 30 см, вес 200 г</p>
+            </div>
+            <div class="product-card__price-wrapper">
+              <p class="product-card__price">1 200 руб.</p>
+              <a class="product-card__link product-card__link--add-to-basket" href="#">
+                <span class="visually-hidden">Добавить в корзину.</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="catalog-products__item product-card">
+          <a class="product-card__link product-card__link--info" href="#">
+            <div class="product-card__image-wrapper">
+              <picture class="product-card__picture">
+                <source type="image/webp" media="(min-width: 1150px)"
+                  srcset="img/catalog/laundry-basket-desktop.webp 1x, img/catalog/laundry-basket-desktop@2x.webp 2x"
+                  width="316" height="462">
+                <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/catalog/laundry-basket-tablet.webp 1x, img/catalog/laundry-basket-tablet@2x.webp 2x"
+                  width="334" height="334">
+                <source type="image/webp"
+                  srcset="img/catalog/laundry-basket-mobile.webp 1x, img/catalog/laundry-basket-mobile@2x.webp 2x"
+                  width="260" height="195">
+                <source media="(min-width: 1150px)"
+                  srcset="img/catalog/laundry-basket-desktop.jpg 1x, img/catalog/laundry-basket-desktop@2x.jpg 2x"
+                  width="316" height="462">
+                <source media="(min-width: 768px)"
+                  srcset="img/laundry-basket-tablet.jpg 1x, img/laundry-basket-tablet@2x.jpg 2x" width="334"
+                  height="334">
+                <img class="product-card__image" src="img/catalog/laundry-basket-mobile.jpg"
+                  srcset="img/catalog/laundry-basket-mobile@2x.jpg 2x" width="260" height="195"
+                  alt="Вязаная белая корзинка со светло-коралловым дном, наполненная тремя полотенцами, свернутыми в рулоны.">
+              </picture>
+            </div>
+          </a>
+          <div class="product-card__description-wrapper">
+            <div class="product-card__text-wrapper">
+              <a class="product-card__link product-card__link--info" href="#">
+                <h3 class="product-card__title title">Корзинка для белья</h3>
+              </a>
+              <p class="product-card__description">Диаметр 15 см, высота 10 см</p>
+            </div>
+            <div class="product-card__price-wrapper">
+              <p class="product-card__price">690 руб.</p>
+              <a class="product-card__link product-card__link--add-to-basket" href="#">
+                <span class="visually-hidden">Добавить в корзину.</span>
+              </a>
+            </div>
+          </div>
+        </li>
+        <li class="catalog-products__item product-card">
+          <a class="product-card__link product-card__link--info" href="#">
+            <div class="product-card__image-wrapper">
+              <picture class="product-card__picture">
+                <source type="image/webp" media="(min-width: 1150px)"
+                  srcset="img/catalog/big-basket-for-toys-desktop.webp 1x, img/catalog/big-basket-for-toys-desktop@2x.webp 2x"
+                  width="316" height="462">
+                <source type="image/webp" media="(min-width: 768px)"
+                  srcset="img/catalog/big-basket-for-toys-tablet.webp 1x, img/catalog/big-basket-for-toys-tablet@2x.webp 2x"
+                  width="334" height="334">
+                <source type="image/webp"
+                  srcset="img/catalog/big-basket-for-toys-mobile.webp 1x, img/catalog/big-basket-for-toys-mobile@2x.webp 2x"
+                  width="260" height="195">
+                <source media="(min-width: 1150px)"
+                  srcset="img/catalog/big-basket-for-toys-desktop.jpg 1x, img/catalog/big-basket-for-toys-desktop@2x.jpg 2x"
+                  width="316" height="462">
+                <source media="(min-width: 768px)"
+                  srcset="img/catalog/big-basket-for-toys-tablet.jpg 1x, img/catalog/big-basket-for-toys-tablet@2x.jpg 2x"
+                  width="334" height="334">
+                <img class="product-card__image" src="img/catalog/big-basket-for-toys-mobile.jpg"
+                  srcset="img/catalog/big-basket-for-toys-mobile@2x.jpg 2x" width="260" height="195"
+                  alt="Большая вязаная белая корзинка с зеленым дном, в которую сложены мягкие игрушки-зверушки.">
+              </picture>
+            </div>
+          </a>
+          <div class="product-card__description-wrapper">
+            <div class="product-card__text-wrapper">
+              <a class="product-card__link product-card__link--info" href="#">
+                <h3 class="product-card__title title">Большая корзинка <br>для игрушек</h3>
+              </a>
+              <p class="product-card__description">Диаметр 30 см, высота 30 см</p>
+            </div>
+            <div class="product-card__price-wrapper">
+              <p class="product-card__price">1 500 руб.</p>
+              <a class="product-card__link product-card__link--add-to-basket" href="#">
+                <span class="visually-hidden">Добавить в корзину.</span>
+              </a>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Процесс производства -->
+    <section class="production-process container">
+      <div class="production-process__content">
+        <div class="production-process__title-wrapper">
+          <h2 class="production-process__title title">Процесс производства</h2>
+        </div>
+        <div class="production-process__video-wrapper video">
+          <a class="video__link" href="#">
+            <picture class="video__picture">
+              <source type="image/webp" media="(min-width: 1150px)"
+                srcset="img/video-desktop.webp 1x, img/video-desktop@2x.webp 2x" width="683" height="455">
+              <source type="image/webp" media="(min-width: 768px)"
+                srcset="img/video-tablet.webp 1x, img/video-tablet@2x.webp 2x" width="668" height="455">
+              <source type="image/webp" srcset="img/video-mobile.webp 1x, img/video-mobile@2x.webp 2x" width="260"
+                height="150">
+              <source media="(min-width: 1150px)" srcset="img/video-desktop.jpg 1x, img/video-desktop@2x.jpg 2x"
+                width="683" height="455">
+              <source media="(min-width: 768px)" srcset="img/video-tablet.jpg 1x, img/video-tablet@2x.jpg 2x"
+                width="668" height="455">
+              <img class="video__link-image" src="img/video-mobile.jpg" srcset="img/video-mobile@2x.jpg 2x" width="260"
+                height="150" alt="Круглая вязаная корзинка серо-зеленого цвета.">
+            </picture>
+          </a>
+          <button class="video__button" type="button">
+            <span class="visually-hidden">Воспроизвести.</span>
+          </button>
+        </div>
+        <div class="production-process__description-wrapper">
+          <p class="production-process__description">По просьбам наших любимых фолловеров мы сняли для вас подробное
+            видео
+            о
+            том, как появляются наши товары.</p>
+          <a class="production-process__link-order button" href="#">Сделать заказ</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!--ПОДВАЛ СТРАНИЦЫ КАТАЛОГА-->
+  <footer class="main-footer">
+    <section class="footer-contacts">
+      <div class="footer-contacts__container container">
+        <h2 class="visually-hidden">Контакты.</h2>
+
+        <!-- Логотип -->
+        <div class="footer-contacts__wrapper footer-contacts__wrapper--logo">
+          <a class="footer-contacts__logo-link footer-logo" href="index.html">
+            <svg class="footer-logo__icon" aria-hidden="true" focusable="false" width="102" height="34"
+              viewBox="0 0 102 34" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M19.22 21.38c-.1-2.68-.5-5.27-.5-7.95 0-2.2.4-4.38-.4-6.47 0-.2.1-.5.1-.7.2-.99-3.3-.5-3.8.5-.3.3-.5.6-.4 1 0 .1.1.2.1.3-.7 3.18-1.6 6.26-2.6 9.34-.4 1.2-.9 2.3-1.3 3.48-.6-1.09-1.2-2.18-1.6-3.38-1.4-3.38-2.6-6.86-4.3-10.14.2-1.5-3.2-1.4-3.9 0-.8 1.69-.7 3.38-.4 5.17.3 1.99.4 3.98.4 6.07 0 3.97.4 7.85.4 11.83-.4.4-.5.9-.1 1.4.2.2.4.4.6.5 1 .69 3.6.09 3.6-1.3 0-4.08-.3-8.16-.4-12.33v-1.2c.1.1.1.3.2.4.6 1.6 1.3 3.18 2.2 4.67.9 1.5 1.3 3.09 1.8 4.68-.2.2-.3.5-.2.7 0 .2.1.3.3.4.6.49 1.8.3 2.5 0 .3-.1.6-.3.8-.4.3-.2.9-.7.7-1.2 0-.1-.1-.2-.1-.3.5-1.29.7-2.58 1-3.88.3-1.39.8-2.78 1.3-4.07.1.6.1 1.2.2 1.89.2 2.58 0 5.07 0 7.55 0 .8.1 1.6.2 2.5.1.29.4 1.78.3 1.88-.8.5-.6 1.1.2 1.3.9.2 2.1-.1 2.8-.7 1.2-1.1.6-2.79.4-4.18-.5-2.39 0-4.97-.1-7.36ZM27.62 22.08c-.1-2-.8-3.88-.8-5.87 0-2.29.2-4.57-.2-6.86-.1-.7-4.1.1-3.9 1 .3 2.08.2 4.17.2 6.36 0 1.99.5 3.88.7 5.86.3 2.1-.1 4.18.1 6.17.1 1 .8 2.69.1 3.58-.4.5 1.5.3 1.6.3.8-.1 1.8-.4 2.3-1 .7-.8.2-2.38.1-3.38-.3-1.99-.1-4.17-.2-6.16ZM43.92 18.8c-2.1-2.79-5.9-.8-8.6-1.5-1.4-.4-1.4-2.28-1.4-3.38 0-1.39-.1-2.68-.3-4.07-.1-1.1 0-2.1.7-2.89.1-.1.9-.3.8-.3.4-.1.7-.1 1.1-.1 1.5-.1 4.6.2 4 2.49-.3 1 3.6.4 3.9-.6 1.2-4.57-7.3-3.68-9.7-3.08-2.2.6-4.6 1.79-4.8 4.38-.1 1.19.3 2.38.3 3.58.1 1.39-.2 2.78.3 4.07 1.1 2.99 5.5 1.6 7.8 1.7 3.8.3 2.7 5.46 2.7 7.85 0 1.3 1.2 3.38.2 4.48-.6.7-2 .7-2.8.8-.8.1-2.2.29-2.7-.5-1-1.4.1-3.79-.1-5.38-.1-.9-4.1-.1-3.9 1 .3 2.58-1.4 6.06 2.4 6.56 2.4.3 5.2-.2 7.5-.9 1.2-.4 2.3-.89 3.2-1.78 1-.9.7-2.3.4-3.48-.5-3.09.9-6.47-1-8.95ZM61.32 18.6c-.1-3.78-.7-7.46-.7-11.24 0-1.99-4-1.3-4 .3 0 3.58.5 7.16.7 10.74v.2c-1.9 0-3.9.2-5.9.2.2-4.58-.6-9.15-.4-13.83 0-.6-3.9-.1-3.9 1-.2 4.47.6 8.85.5 13.32l-.3 6.37c0 1.1.2 2.19.3 3.28.1 1 .5 2.29.2 3.28-.2.8 3.6.3 3.9-.7.5-1.79-.2-3.97-.4-5.76-.2-1.7 0-3.48.1-5.17 2-.1 4.1-.3 6.1 0l.3 4.07c.1 1.2.2 2.29.2 3.48 0 1 .1 2.49-.2 3.48-.8 2.1 3.1 1.9 3.7.4.7-1.89.5-4.17.4-6.16-.2-2.49-.6-4.88-.6-7.26ZM78.22 22.97c-.9-2.78-2.4-5.17-3.6-7.75 1-1.9 2-3.88 2.9-5.87.8-1.8 1.4-3.78 3.1-5.07.6-.4.6-.9-.3-1-.9-.1-2.1.2-2.8.7-1.4 1.3-2.4 2.68-3.1 4.37-.9 2.1-1.9 4.08-2.9 6.07-.1.1-.1.3-.2.4-.5.3-.8.8-.6 1.3a66.9 66.9 0 0 1-2.5 4.57c-.3-5.47-1-11.04-1.2-16.51 0-1.3-4-.5-3.9 1 .2 6.85 1.2 13.62 1.3 20.48v.1c-.3.3-.2.5.1.6 0 1.78-.1 3.47-.2 5.26-.5.7.5 1.1 1.1 1.1h.1c.7 0 2.6-.3 2.7-1.4.2-2.08.3-4.17.2-6.26 1.6-1.69 2.9-3.58 4.1-5.57.8 1.5 1.5 2.99 2 4.58.9 2.68 2.3 5.27 3.1 7.95.5 1.8 4.5.7 3.9-1-1-2.78-2.4-5.26-3.3-8.05ZM101.72 18.4c-.2-.8-1.4-.8-2.3-.8v-1c-.1-2.68-.2-5.36-.4-7.95-.2-2.48-1.6-3.28-4-3.18-2.4.1-5.2.5-7.5 1.4-2.6.99-4.1 2.88-4.6 5.66-.5 2.98.2 6.17.4 9.15.2 3.48.1 6.96.1 10.44 0 .6 3.9 0 3.9-1v-8.25c0-.8-.1-1.59-.1-2.38 1.4-.6 3.7 0 5.1.1 1.1.1 2.2-.2 3.2-.3 0 2.29.1 4.57.2 6.86 0 1.2.5 3.48-.4 4.47-.4.5 1.5.3 1.6.3.8-.1 1.8-.4 2.3-1 .9-1.09.5-3.77.4-5.06-.1-1.9-.1-3.78-.1-5.67 1.1-.2 2.4-.9 2.2-1.8Zm-14.6-.1-.3-3.68c-.2-2.29.1-5.57 2.3-6.96.6-.4 1.7-.3 2.4-.4 1-.2 2-.4 2.8.2 1.2.8.9 3.68.9 4.87 0 2 .2 3.98.3 5.97-.6.1-1.1.1-1.7.1-2.3-.2-4.6-.6-6.7-.1ZM24.22 6.66c.5-.1 1-.2 1.5-.5l.2-.2c.5-.3 1-.79.7-1.39-.5-1.09-.4-2.18-.4-3.38 0-1-1-1.19-1.8-1.19-.7.1-2.2.6-2.2 1.5 0 .99-.1 1.98.1 2.98 0 .1-.1.2-.1.4-.1.2 0 .4.1.59v.4c.1.2.2.4.4.5.6.3 1.1.3 1.5.3Z" />
+            </svg>
+            <span class="visually-hidden">Логотип интернет-магазина товаров ручной работы для дома «Мишка».</span>
+          </a>
+        </div>
+
+        <!--Ссылки на социальные сети-->
+        <div class="footer-contacts__wrapper footer-contacts__wrapper--socials-link">
+          <ul class="footer-contacts__socials-list socials-list">
+            <li class="socials-list__item">
+              <a class="socials-list__link socials-list__link--vkontakte" href="https://vk.com/htmlacademy"
+                target="_blank" rel="nofollow noopener">
+                <span class="visually-hidden">ВКонтакте.</span>
+              </a>
+            </li>
+            <li class="socials-list__item">
+              <a class="socials-list__link socials-list__link--youtube"
+                href="https://www.youtube.com/user/htmlacademyru" target="_blank" rel="nofollow noopener">
+                <span class="visually-hidden">YouTube.</span>
+              </a>
+            </li>
+            <li class="socials-list__item">
+              <a class="socials-list__link socials-list__link--telegram" href="https://t.me/htmlacademy" target="_blank"
+                rel="nofollow noopener">
+                <span class="visually-hidden">Telegram.</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Разработано -->
+        <div class="footer-contacts__wrapper footer-contacts__wrapper--develop">
+          <a class="footer-contacts__develop-link develop" href="https://htmlacademy.ru/intensive/adaptive"
+            target="_blank" rel="nofollow noopener">
+            <span class="develop__text">Разработано</span>
+            <svg class="develop__icon-logo-htmlacademy" aria-hidden="true" focusable="false" width="27" height="35"
+              viewBox="0 0 27 35" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M13.6 0h-.1L0 1.4v24.7l13.5 8 13.4-8V1.4L13.6 0ZM25 12.1 13.5 5.3v-.1h-.1l-.1-.1v.1L1.9 12.1v-9l11.5-1.2L25 3.1v9ZM13.4 6.8l11.5 6.7-4.5 2.6-7.1-4.2v1.4l5.9 3.5-.9.5-5-3v1.4l3.8 2.3-.8.5-3-1.8v1.4l1.9 1.1-1.8 1.1L2 13.6l11.4-6.8ZM1.9 15.1l11.4 6.8v1l-7.9-4.7v1.4l8 4.8v1.1l-8-4.7v1.4l8 4.8 8.1-4.9v-5.2l3.4-2v10l-11.5 6.9L1.9 25v-9.9Z" />
+            </svg>
+            <span class="visually-hidden">Логотип сайта HTML Academy.</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </footer>
+
+  <!-- Модальное окно "Добавить в корзину" -->
+  <!-- Для появления модального окна, удалить класс modal-container--close -->
+  <div class="modal-container modal-container--close">
+    <div class="modal-container__message">
+      <section class="modal-container__content modal-content">
+        <h2 class="modal-content__title title">Добавить в&nbsp;корзину</h2>
+        <form class="modal-content__form" action="https://echo.htmlacademy.ru/" method="post">
+
+          <!-- Выберите размер -->
+          <fieldset class="modal-content__form-group">
+            <legend class="modal-content__form-group-title">Выберите размер:</legend>
+            <ul class="modal-content__form-control-list">
+              <li class="modal-content__form-control-item">
+                <label class="modal-content__form-control-label form-control form-control--modal">
+                  <input class="visually-hidden form-control__input" type="radio" name="size" value="small" checked>
+                  <span class="form-control__text">S</span>
+                </label>
+              </li>
+              <li class="modal-content__form-control-item">
+                <label class="modal-content__form-control-label form-control form-control--modal">
+                  <input class="visually-hidden form-control__input" type="radio" name="size" value="medium">
+                  <span class="form-control__text">M</span>
+                </label>
+              </li>
+              <li class="modal-content__form-control-item">
+                <label class="modal-content__form-control-label form-control form-control--modal">
+                  <input class="visually-hidden form-control__input" type="radio" name="size" value="large">
+                  <span class="form-control__text">L</span>
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <!-- Кнопка "Добавить" -->
+          <button class="modal-content__form-button button button--green" type="submit">Добавить</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

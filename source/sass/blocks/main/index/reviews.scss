@@ -1,0 +1,195 @@
+@use "./variables.scss";
+
+.reviews {
+  position: relative;
+  padding: 29px 30px 45px 30px;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    content: "";
+    width: 100%;
+    height: 6px;
+    background-image: url("../img/stack.svg#zigzag-line");
+    background-size: 320px 6px;
+    background-repeat: repeat-x;
+    background-position: left bottom;
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 38px 30px 68px 30px;
+
+    &::before {
+      height: 17px;
+      background-size: 768px 17px;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      top: 38px;
+      left: 0;
+      content: "";
+      min-width: 45.57%;
+      min-height: 81.17%;
+      background-image: url("../img/napkin-tablet.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left center;
+    }
+
+    @media (min-resolution: 2dppx) {
+      &::after {
+        background-image: url("../img/napkin-tablet@2x.jpg");
+      }
+    }
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding: 45px 30px 67px 30px;
+
+    &::before {
+      width: calc(100% - 100px);
+      left: 50px;
+      height: 23px;
+      background-size: 1050px 23px;
+    }
+
+    &::after {
+      content: none;
+    }
+  }
+}
+
+.reviews__container {
+  display: grid;
+
+  @media (min-width: variables.$tablet-width) {
+    position: relative;
+    grid-template-columns: 1fr 40%;
+    column-gap: 20px;
+    min-height: 457px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    &::after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      content: "";
+      min-width: 33.33%;
+      min-height: 100%;
+      background-image: url("../img/napkin-tablet.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: left center;
+    }
+
+    @media (min-resolution: 2dppx) {
+      &::after {
+        background-image: url("../img/napkin-tablet@2x.jpg");
+      }
+    }
+  }
+}
+
+.reviews__title {
+  margin: 0;
+  margin-bottom: 14px;
+  font-size: 25px;
+  text-align: left;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-column: 1/2;
+    margin-top: 82.5px;
+    margin-bottom: 38.5px;
+    font-size: 43px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin: 78px 0 35px 175px;
+    font-size: 53px;
+  }
+}
+
+.reviews__wrapper {
+  margin-bottom: 38px;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-column: 1/3;
+    grid-row: 2/3;
+    margin-bottom: 47px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 96px;
+    margin-left: 175px;
+  }
+}
+
+.reviews__item {
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: 70% 30%;
+  }
+}
+
+.reviews__text {
+  margin: 0;
+  margin-bottom: 33px;
+  font-size: 15px;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-column: 1/3;
+    margin-bottom: 61px;
+    font-size: 17px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 44px;
+  }
+}
+
+.reviews__author-name {
+  display: block;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #000000;
+
+  @media (min-width: variables.$tablet-width) {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    letter-spacing: 0.04em;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    letter-spacing: 0;
+  }
+}
+
+.reviews__author-nickname {
+  display: block;
+  margin-top: 3px;
+  font-weight: 400;
+  line-height: 30px;
+  color: #444444;
+
+  @media (min-width: variables.$tablet-width) {
+    letter-spacing: normal;
+  }
+}
+
+.reviews__write-link {
+  text-decoration: none;
+
+  @media (min-width: variables.$tablet-width) {
+    position: absolute;
+    grid-column: 2/3;
+    right: 0;
+    top: 78px;
+    min-width: 175px;
+  }
+}
