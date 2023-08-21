@@ -26,8 +26,17 @@
 @use "./blocks/main/index/contacts.scss";
 @use "./blocks/main/index/map.scss";
 
+// Catalog
+@use "./blocks/main/catalog/catalog-products.scss";
+@use "./blocks/main/catalog/product-card.scss";
+@use "./blocks/main/catalog/production-process.scss";
+@use "./blocks/main/catalog/video.scss";
+
 // Form
+@use "./blocks/main/form/order.scss";
 @use "./blocks/main/form/form-control.scss";
+@use "./blocks/main/form/form-field.scss";
+@use "./blocks/main/form/input.scss";
 
 // Footer
 @use "./blocks/footer/footer-contacts.scss";

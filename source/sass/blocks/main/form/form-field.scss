@@ -1,0 +1,181 @@
+@use "./variables.scss";
+
+.form-field {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+
+  &--phone,
+  &--mail {
+    &::before {
+      position: absolute;
+      content: "";
+      background-color: rgba(0, 0, 0, 0.2);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      transition: background-color 0.5s;
+    }
+
+    &::after {
+      position: absolute;
+      z-index: -1;
+      content: "";
+      left: 0;
+      top: 8px;
+      transform: translateY(-50%);
+      min-width: 100%;
+      height: 1px;
+      background-color: #62d1ba;
+    }
+  }
+
+  &--phone {
+    &::before {
+      right: 7px;
+      bottom: 16px;
+      min-width: 25px;
+      min-height: 24px;
+      mask-image: url("../img/stack.svg#phone");
+      mask-size: 25px 24px;
+    }
+  }
+
+  &--mail {
+    &::before {
+      right: 3px;
+      bottom: 16px;
+      min-width: 32px;
+      min-height: 21px;
+      mask-image: url("../img/stack.svg#letter");
+      mask-size: 32px 21px;
+    }
+  }
+
+  @media (min-width: variables.$tablet-width) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 25px;
+    align-items: center;
+
+    &--phone,
+    &--mail {
+      grid-template-columns: 21% 1fr;
+      column-gap: 28px;
+
+      &::after {
+        content: none;
+      }
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    &--phone {
+      &::before {
+        right: 26px;
+      }
+    }
+
+    &--mail {
+      &::before {
+        right: 22px;
+      }
+    }
+
+    &:hover::before {
+      background-color: #62d1ba;
+    }
+  }
+
+  &:active::before {
+    background-color: #62d1ba;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    column-gap: 26px;
+
+    &--phone,
+    &--mail {
+      grid-template-columns: 14% 1fr;
+      column-gap: 10px;
+    }
+
+    &--phone {
+      &::before {
+        right: 8px;
+      }
+    }
+
+    &--mail {
+      &::before {
+        right: 4px;
+      }
+    }
+  }
+
+  // Ошибка ввода или не указаны данные
+  &--error {
+    .form-field__input {
+      box-shadow: 0 -2px 0 0 #ff8282 inset;
+    }
+
+    &::before {
+      background-color: #ff8282;
+    }
+  }
+}
+
+// Неактивное состояние
+.form-field.disabled {
+  opacity: variables.$input-label-opacity-disabled;
+  pointer-events: none;
+}
+
+.form-field__text {
+  font-weight: 700;
+  line-height: 18px;
+  color: #000000;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 19px;
+  }
+
+  &--phone,
+  &--email {
+    align-self: flex-start;
+    margin-bottom: 4.5px;
+    padding-right: 22px;
+    background-color: #ffffff;
+    line-height: 16px;
+    text-transform: uppercase;
+    color: #63d1bb;
+
+    @media (min-width: variables.$tablet-width) {
+      margin: 17px 0 0 0;
+      padding-right: 0;
+      background-color: transparent;
+      font-size: 17px;
+      overflow-wrap: break-word;
+    }
+
+    @media (min-width: variables.$desktop-width) {
+      margin-left: 10px;
+    }
+  }
+}
+
+.form-field--phone .form-field__input,
+.form-field--mail .form-field__input {
+  padding-right: 35px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding-right: 54px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-right: 36px;
+  }
+}

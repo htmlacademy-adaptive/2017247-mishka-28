@@ -1,0 +1,114 @@
+@use "./variables.scss";
+
+.production-process {
+  padding: 14px 30px 57px 30px;
+
+  @media (min-width: variables.$tablet-width) {
+    padding-top: 28px;
+    padding-bottom: 64px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-bottom: 105px;
+  }
+}
+
+.production-process__content {
+  transition: box-shadow 0.3s linear;
+
+  @media (min-width: variables.$tablet-width) {
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  &:active {
+    box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    display: grid;
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.production-process__title-wrapper {
+  border: 1px solid #ececec;
+  border-bottom: 1px solid transparent;
+}
+
+.production-process__title {
+  margin: 20.5px 12px 25.5px 33px;
+  padding-left: 57px;
+  font-size: 17px;
+  line-height: 24px;
+  text-align: left;
+  background-image: url("../img/stack.svg#video");
+  background-size: 32px 22px;
+  background-repeat: no-repeat;
+  background-position: left center;
+
+  @media (min-width: variables.$tablet-width) {
+    margin: 38px 41px 12.5px 41px;
+    padding-left: 65px;
+    font-size: 20px;
+    background-position: left top;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    padding-left: 0;
+    padding-top: 49px;
+    margin: 46px 48px 13px 78px;
+  }
+}
+
+.production-process__video-wrapper {
+  @media (min-width: variables.$tablet-width) {
+    order: -1;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-row: 1/3;
+  }
+}
+
+.production-process__description-wrapper {
+  padding: 34px 30px 32px 33px;
+  border: 1px solid #ececec;
+  border-top: 1px solid transparent;
+
+  @media (min-width: variables.$tablet-width) {
+    padding: 11px 41px 45px 41px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    grid-column: 2/3;
+    padding: 13px 57px 59px 78px;
+  }
+}
+
+.production-process__description {
+  margin: 0;
+  margin-bottom: 41px;
+  font-size: 13px;
+  line-height: 24px;
+
+  @media (min-width: variables.$tablet-width) {
+    font-size: 15px;
+    line-height: 30px;
+  }
+
+  @media (min-width: variables.$desktop-width) {
+    margin-bottom: 51.5px;
+  }
+}
+
+.production-process__link-order {
+  min-width: 100%;
+  padding: 16px 11px;
+  text-decoration: none;
+  line-height: 16px;
+}
